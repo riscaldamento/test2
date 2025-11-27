@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    /* Palette minimalista e contrastante */
+    --color-black: #101010;
+    --color-white: #f7f7f7;
+    --color-accent: #0077ff; /* Blu elettrico/vivace */
+    --color-warning: #ff5722; /* Arancione per l'urgenza */
+    --color-line: #333333;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    background: var(--color-black);
+    color: var(--color-white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.05em; /* Stile minimalista audace */
+}
+
+h1 { font-size: 5.5rem; font-weight: 900; }
+h2 { font-size: 3.8rem; font-weight: 700; color: var(--color-accent); }
+h3 { font-size: 1.9rem; font-weight: 600; }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 6rem 1.5rem; /* Tanto spazio per l'effetto minimalista */
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    margin-bottom: 6rem;
+    font-weight: 300;
+}
+
+/* --- Tonalità e Sezioni --- */
+.dark-minimal {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.light-clean {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+.light-clean h2 { color: var(--color-black); }
+.light-clean .subtitle { color: var(--color-black); }
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('assets/hero-bg.jpg') no-repeat center center/cover; 
+}
+
+.hero-section::before {
+    background: rgba(16, 16, 16, 0.85);
+}
+
+.hero-content p {
+    font-size: 2.2rem;
+    color: var(--color-warning); 
+    margin-bottom: 5rem;
+}
+
+.cta-button {
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 1.5rem 4rem;
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: 2px;
+    /* Animazione 3D sul bottone */
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cta-button:hover {
+    background: var(--color-warning);
+    transform: translate3d(0, -5px, 0); /* Spostamento 3D verso l'alto */
+}
+
+/* --- Sezione Trend (Dati) --- */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.data-item {
+    padding: 3rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Effetto 3D elegante per l'entrata */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+}
+
+.data-value {
+    font-size: 5.5rem;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    color: var(--color-warning);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Griglia Cause (Più Decorata) --- */
+.cause-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-line);
+}
+
+.cause-item {
+    padding-top: 2rem;
+    border-bottom: 1px solid var(--color-line);
+    text-align: left;
+    /* Animazione slide-up fluida */
+    transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1);
+}
+
+.cause-item h3 { 
+    color: var(--color-accent); 
+    font-size: 1.5rem;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.cause-item:hover {
+    transform: translate3d(0, -10px, 0);
+}
+
+/* --- Sezione Siccità (Flexbox) --- */
+#impatto-siccita .flex-content {
+    display: flex;
+    gap: 80px;
+    text-align: left;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+#impatto-siccita .text-box {
+    flex: 1;
+    max-width: 50%;
+    color: var(--color-black);
+}
+
+#impatto-siccita .image-box {
+    flex: 1;
+    min-height: 500px;
+    background: url('assets/drought-impact.jpg') no-repeat center center/cover;
+    border-radius: 12px;
+    /* Ombreggiatura per staccare dal fondo chiaro */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.6s ease;
+}
+
+#impatto-siccita .image-box:hover {
+    transform: scale(1.02);
+}
+
+/* --- Sezioni Parallasse --- */
+.parallax-section {
+    height: 80vh; /* Ancora più impatto visivo */
+    background-attachment: fixed;
+    /* Semplificati gli stili */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.parallax-section::before {
+    background: rgba(16, 16, 16, 0.7);
+}
+
+.parallax-section h2 { 
+    font-size: 4.8rem; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    color: var(--color-white);
+}
+
+/* IMMAGINI DI FONDO PARALLASSE (DEVI CARICARLE) */
+.image-impact-1 { background-image: url('assets/glacier-impact.jpg'); }
+.image-impact-2 { background-image: url('assets/sea-level-impact.jpg'); }
+
+/* --- Footer --- */
+.footer-section {
+    background: var(--color-black);
+    color: var(--color-line);
+    text-align: center;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--color-line);
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 1000px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    .hero-content p { font-size: 1.5rem; }
+    .parallax-section {
+        height: 50vh;
+        background-attachment: scroll; /* Disattivato Parallasse per Mobile */
+    }
+    #impatto-siccita .flex-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    #impatto-siccita .text-box {
+        max-width: 100%;
+    }
+}
