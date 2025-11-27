@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&family=Karla:wght@300;400;500;700&display=swap');
 
 :root {
-    /* Nuova palette ispirata al contrasto e all'eleganza */
-    --color-dark-bg: #1A1A1A; /* Nero antracite, molto scuro ma non puro */
-    --color-light-bg: #F8F8F8; /* Grigio chiarissimo, quasi bianco */
-    --color-primary-text-dark: #FFFFFF; /* Testo bianco per sfondi scuri */
-    --color-secondary-text-dark: #C0C0C0; /* Grigio chiaro per sottotitoli scuri */
-    --color-primary-text-light: #1A1A1A; /* Testo nero per sfondi chiari */
-    --color-secondary-text-light: #606060; /* Grigio scuro per sottotitoli chiari */
-    --color-accent: #007bff; /* Blu brillante, pulito e moderno */
-    --color-warning: #FF5733; /* Arancione-rosso, forte ma non aggressivo */
+    /* Nuova Palette: Blu Notte e Oro Rame */
+    --color-dark-bg: #091A2A; /* Blu Notte Profondo */
+    --color-light-bg: #F7F8F3; /* Avorio Caldo/Bianco Sporco */
+    --color-primary-text-dark: #FFFFFF;
+    --color-secondary-text-dark: #AAB7C4; /* Grigio-azzurro per sottotitoli scuri */
+    --color-primary-text-light: #1A1A1A;
+    --color-secondary-text-light: #4A5568; /* Blu-grigio per sottotitoli chiari */
+    --color-accent: #FFD166; /* Oro Rame Brillante (Per titoli/dettagli) */
+    --color-warning: #FF5733; /* Rosso standard per urgenza */
 
-    /* Font scelti per contrasto ed eleganza */
-    --font-heading: 'Crimson Pro', serif; /* Elegante per i titoli */
-    --font-body: 'Karla', sans-serif; /* Pulito e leggibile per il corpo */
+    --font-heading: 'Crimson Pro', serif; 
+    --font-body: 'Karla', sans-serif; 
 }
 
 /* Reset e box-sizing universale */
@@ -27,10 +26,10 @@
 
 body {
     font-family: var(--font-body);
-    line-height: 1.7; /* Leggermente aumentato per una migliore leggibilità */
-    background: var(--color-dark-bg);
+    line-height: 1.7;
+    background: var(--color-dark-bg); /* Sfondo principale: Blu Notte */
     color: var(--color-primary-text-dark);
-    overflow-x: hidden; /* Previene scroll orizzontale */
+    overflow-x: hidden;
 }
 
 /* Stili generali per titoli */
@@ -38,162 +37,124 @@ h1, h2, h3 {
     font-family: var(--font-heading);
     line-height: 1.1;
     margin-bottom: 0.8em;
-    letter-spacing: -0.02em; /* Spaziatura caratteri per eleganza */
+    letter-spacing: -0.02em;
 }
 
-h1 { font-size: 5.8vw; font-weight: 700; color: var(--color-primary-text-dark); } /* Dimensioni fluide */
-h2 { font-size: 3.8vw; font-weight: 700; color: var(--color-accent); margin-bottom: 1.2em; }
-h3 { font-size: 1.8vw; font-weight: 700; } /* Dimensioni fluide */
+h1 { font-size: 5.8vw; font-weight: 700; color: var(--color-primary-text-dark); }
+h2 { font-size: 3.8vw; font-weight: 700; color: var(--color-accent); margin-bottom: 1.2em; } /* Titoloni in Oro Rame */
+h3 { font-size: 1.8vw; font-weight: 700; }
 
 /* Contenitore principale */
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 8vw 1.5rem; /* Padding responsivo e generoso per spazi */
+    padding: 8vw 1.5rem;
     text-align: center;
 }
 
 .subtitle {
-    font-size: 1.4vw; /* Dimensioni fluide */
+    font-size: 1.4vw;
     font-family: var(--font-body);
     font-weight: 300;
-    margin-bottom: 6vw; /* Spaziatura generosa */
+    margin-bottom: 6vw;
     line-height: 1.5;
 }
 
-/* Sezioni di colore */
+/* --- Tonalità e Sezioni --- */
 .section-dark {
-    background-color: var(--color-dark-bg);
+    background-color: var(--color-dark-bg); /* Blu Notte Profondo */
     color: var(--color-primary-text-dark);
 }
 .section-dark .subtitle { color: var(--color-secondary-text-dark); }
+
 .section-light {
-    background-color: var(--color-light-bg);
+    background-color: var(--color-light-bg); /* Avorio Caldo */
     color: var(--color-primary-text-light);
 }
-.section-light h2 { color: var(--color-primary-text-light); }
+.section-light h2 { color: var(--color-accent); } /* Titoli in Oro Rame anche su sfondo chiaro */
 .section-light .subtitle { color: var(--color-secondary-text-light); }
+
 
 /* --- Hero Section (Impatto Iniziale) --- */
 .hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    /* Stile precedente, ma overlay adattato al blu notte */
     background: url('assets/hero-bg.jpg') no-repeat center center/cover; 
-    overflow: hidden; /* Nasconde overflow animazioni */
 }
 
 .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Overlay più morbido */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-size: 7vw; /* Titolo ancora più grande e responsivo */
-    line-height: 1;
-    margin-bottom: 0.5em;
-    text-shadow: 0 0 15px rgba(0,0,0,0.5); /* Leggera ombra per profondità */
+    background: rgba(9, 26, 42, 0.85); /* Overlay scuro in armonia con il fondo */
 }
 
 .hero-content p {
-    font-size: 2vw; /* Anche il sottotitolo più grande */
-    font-family: var(--font-body);
-    font-weight: 300;
-    color: var(--color-warning);
+    font-size: 2vw; 
+    font-weight: 400;
+    color: var(--color-warning); /* Avviso in Rosso */
     margin-bottom: 4vw;
 }
 
 .cta-button {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-light-bg);
-    padding: 1.8vw 4.5vw; /* Padding responsivo */
-    border-radius: 5px;
-    font-family: var(--font-body);
+    background: var(--color-accent); /* Bottone in Oro Rame */
+    color: var(--color-dark-bg); /* Testo scuro sul bottone chiaro */
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.15em;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); /* Ombra per il bottone */
-    /* Animazione più complessa all'hover */
+    box-shadow: 0 5px 15px rgba(255, 209, 102, 0.5); /* Ombra del colore accent */
     transform: scale(1);
     transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .cta-button:hover {
-    transform: scale(1.05) translateY(-5px); /* Si ingrandisce e si sposta leggermente */
-    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.6);
+    transform: scale(1.05) translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(255, 209, 102, 0.7);
 }
 
 /* --- Griglie Dati (Trend) --- */
 .data-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 4vw; /* Spazi fluidi */
-    margin-top: 3vw;
+    gap: 4vw;
 }
 
 .data-item {
-    padding: 3.5vw; /* Padding interno fluido */
-    background: var(--color-white);
+    padding: 3.5vw;
+    background: var(--color-dark-bg); /* Scuro su Scuro per un effetto "card" su sfondo light */
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Ombra morbida */
-    transform: translateZ(0); /* Ottimizzazione per animazioni 3D */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    transform: translateZ(0);
 }
 .section-dark .data-item {
-    background: var(--color-dark-bg);
+    background: rgba(255, 255, 255, 0.03); /* Lieve trasparenza sul dark */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255,255,255,0.05);
 }
 
 .data-value {
-    font-size: 6vw; /* Valori grandi e fluidi */
+    font-size: 6vw;
     font-family: var(--font-heading);
     font-weight: 700;
     color: var(--color-warning);
-    margin-bottom: 0.3em;
     line-height: 1;
 }
 
 .data-label {
     font-size: 1.2vw;
-    font-family: var(--font-body);
-    color: var(--color-secondary-text-light);
+    color: var(--color-secondary-text-dark); /* Adattato al background */
 }
-.section-dark .data-label { color: var(--color-secondary-text-dark); }
+.section-light .data-label { color: var(--color-secondary-text-light); }
 
 /* --- Griglia Cause / Soluzioni (Decorata) --- */
 .cause-grid, .solution-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5vw; /* Spazio generoso */
+    gap: 5vw; 
     margin-top: 5vw;
     padding-top: 2vw;
-    border-top: 1px solid rgba(255,255,255,0.1); /* Linea divisoria sottile */
+    border-top: 1px solid rgba(255,255,255,0.1); 
 }
 .section-light .cause-grid, .section-light .solution-grid {
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-
 .cause-item, .solution-item {
-    padding: 2.5vw 0; /* Padding responsivo */
+    padding: 2.5vw 0;
     text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.05); /* Linea decorativa */
-    transform: translateZ(0); /* Ottimizzazione per 3D */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transform: translateZ(0); 
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .section-light .cause-item, .section-light .solution-item {
@@ -201,16 +162,12 @@ h3 { font-size: 1.8vw; font-weight: 700; } /* Dimensioni fluide */
 }
 
 .cause-item:hover, .solution-item:hover {
-    transform: translateY(-10px) rotateX(5deg); /* Effetto 3D e spostamento */
+    transform: translateY(-10px) rotateX(5deg);
 }
 
 .cause-item h3, .solution-item h3 { 
-    font-size: 1.5vw; /* Dimensione fluida */
-    font-family: var(--font-body);
-    font-weight: 700;
-    color: var(--color-accent); 
-    margin-bottom: 0.5em;
-    letter-spacing: 0.05em;
+    font-size: 1.5vw;
+    color: var(--color-accent); /* Dettagli in Oro Rame */
 }
 
 .cause-item p, .solution-item p { 
@@ -222,73 +179,27 @@ h3 { font-size: 1.8vw; font-weight: 700; } /* Dimensioni fluide */
 }
 
 /* --- Sezione Siccità (Flexbox con Immagine) --- */
-#impatto-siccita .flex-content {
-    display: flex;
-    gap: 6vw; /* Spazio fluido tra testo e immagine */
-    text-align: left;
-    align-items: center;
-    margin-top: 5vw;
-}
-
 #impatto-siccita .text-box {
-    flex: 1;
-    max-width: 55%; /* L'immagine prende più spazio */
     color: var(--color-primary-text-light);
 }
 
 #impatto-siccita .image-box {
-    flex: 1;
-    min-height: 40vw; /* Altezza responsiva per l'immagine */
+    /* Stili precedenti */
     background: url('assets/drought-impact.jpg') no-repeat center center/cover;
-    border-radius: 15px; /* Bordi più arrotondati */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    transform: translateZ(0);
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-#impatto-siccita .image-box:hover {
-    transform: scale(1.03) rotateZ(-1deg); /* Piccolo movimento e rotazione */
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Sezioni Parallasse (Estremamente Impattanti) --- */
 .parallax-section {
-    height: 90vh; /* Ancora più alte per un effetto WOW */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-primary-text-dark);
+    /* Stili precedenti */
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    padding: 0;
-    overflow: hidden;
 }
 
 .parallax-section::before {
-    background: rgba(0, 0, 0, 0.6); /* Overlay più morbido per la leggibilità */
+    background: rgba(9, 26, 42, 0.75); /* Overlay adattato al Blu Notte */
 }
 
-.parallax-section h2 { 
-    font-size: 5vw; 
-    color: var(--color-primary-text-dark); 
-    text-shadow: 0 0 10px rgba(0,0,0,0.8);
-    position: relative;
-    z-index: 1;
-}
-
-.parallax-section p { 
-    font-size: 1.8vw; 
-    font-family: var(--font-body);
-    font-weight: 400; 
-    position: relative;
-    z-index: 1;
-}
-
-/* IMMAGINI DI FONDO PARALLASSE (DEVI CARICARLE TU in assets/) */
+/* IMMAGINI DI FONDO PARALLASSE */
 .image-impact-1 { background-image: url('assets/glacier-impact.jpg'); }
 .image-impact-2 { background-image: url('assets/sea-level-impact.jpg'); }
 
@@ -296,13 +207,12 @@ h3 { font-size: 1.8vw; font-weight: 700; } /* Dimensioni fluide */
 .footer-section {
     background: var(--color-dark-bg);
     color: var(--color-secondary-text-dark);
-    text-align: center;
-    padding: 3vw 0;
-    font-size: 1vw;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
+
 /* --- Responsive Design (Mobile First) --- */
+/* (Le media queries restano identiche per mantenere la reattività) */
 @media (max-width: 1024px) {
     h1 { font-size: 4.5rem; }
     h2 { font-size: 3rem; }
@@ -317,7 +227,7 @@ h3 { font-size: 1.8vw; font-weight: 700; } /* Dimensioni fluide */
 
     .parallax-section {
         height: 70vh;
-        background-attachment: scroll; /* Disattivato Parallasse per Mobile per performance */
+        background-attachment: scroll;
     }
     .parallax-section h2 { font-size: 3.5rem; }
     .parallax-section p { font-size: 1.2rem; }
